@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ThemeContext, themes } from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
 
-const Root = () => (
-  <ThemeContext.Consumer>
-    {({ theme, setTheme }) => (
+const Root = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return (
+    <>
       <Toggle
         onChange={() => {
           if (theme === themes.light) setTheme(themes.dark);
@@ -12,8 +13,8 @@ const Root = () => (
         }}
         value={theme === themes.dark}
       />
-    )}
-  </ThemeContext.Consumer>
-);
+    </>
+  );
+};
 
 export default Root;

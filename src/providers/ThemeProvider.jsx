@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeContext, themes } from "../contexts/ThemeContext";
+import { useEffect, useState } from "react";
 
 const getTheme = () => {
   const theme = `${window?.localStorage?.getItem("theme")}`;
@@ -12,9 +13,9 @@ const getTheme = () => {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState(getTheme);
+  const [theme, setTheme] = useState(getTheme);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
