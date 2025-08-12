@@ -1,3 +1,4 @@
+import React from "react";
 import { ThemeContext, themes } from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
 
@@ -6,8 +7,8 @@ const Root = () => (
     {({ theme, setTheme }) => (
       <Toggle
         onChange={() => {
-          if (theme === themes.light) setTheme(theme.dark);
-          if (theme === themes.dark) setTheme(theme.light);
+          if (theme === themes.light) setTheme(themes.dark);
+          if (theme === themes.dark) setTheme(themes.light);
         }}
         value={theme === themes.dark}
       />
