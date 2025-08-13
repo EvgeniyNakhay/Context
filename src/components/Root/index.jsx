@@ -3,11 +3,13 @@ import { ThemeContext, themes } from "../../contexts/ThemeContext";
 import Toggle from "../Toggle";
 import Description from "../description/description";
 import MainCaption from "../mainCaption/mainCaption";
+import StatusIcon from "../statusIcon/statusIcon";
 
 const Root = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
     <>
+      <StatusIcon />
       <MainCaption />
       <Description />
       <Toggle
